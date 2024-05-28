@@ -100,7 +100,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.postproc@1.0.vendor \
     libcamera2ndk_vendor \
     libdng_sdk.vendor \
-    libstdc++_vendor \
+    libstdc++.vendor \
     libgui_vendor \
     Aperture
 
@@ -308,7 +308,7 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-aosp
+    $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_PACKAGES += \
     CarrierConfigOverlay \
@@ -527,7 +527,7 @@ PRODUCT_COPY_FILES += \
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi-service \
+    android.hardware.wifi@1.0-service \
     hostapd \
     libwifi-hal-ctrl \
     libwifi-hal-qcom \
@@ -542,3 +542,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
+
+
+# LiveDisplay
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@2.0-service-sdm
+
+# Trust HAL
+PRODUCT_PACKAGES += \
+    vendor.lineage.trust@1.0-service
